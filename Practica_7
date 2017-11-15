@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+void bienvenida(){
+	 printf("Bienvenido al barco! \n");
+}
+void navegarAlSur(int *a, int *b){
+    printf("Navegando al SUR! \n");
+    //*x = *x+1;
+    *b-=10;
+}
+void imprimirPosicion_sur(int x, int y){
+    printf("La posicion actual del barco es: %d, %d \n", x, y);
+}
+void navegarAlnorte(int *a, int *b){
+    printf("Navegando al NORTE! \n");
+    //*x = *x+1;
+    *b+=10;
+}
+void imprimirPosicion_norte(int x, int y){
+    printf("La posicion actual del barco es: %d, %d \n", x, y);
+}
+void navegarAleste(int *a, int *b){
+    printf("Navegando al ESTE! \n");
+    *a = *a+10;
+    //*y+=10;
+}
+void imprimirPosicion_este(int x, int y){
+    printf("La posicion actual del barco es: %d, %d \n", x, y);
+}
+void navegarAloeste(int *a, int *b){
+    printf("Navegando al OESTE! \n");
+    *a = *a-10;
+   // *y+=10;
+}
+void imprimirPosicion_oeste(int x, int y){
+    printf("La posicion actual del barco es: %d, %d \n", x, y);
+}
+int main() {
+    int x = 0;
+    int y = 0;   
+    int *a=&x;
+    int *b=&y;
+    bienvenida();    
+    navegarAlSur(a, b);
+    imprimirPosicion_sur(x,  y);
+    navegarAlnorte(a,  b);
+   imprimirPosicion_norte( x,  y);
+   navegarAleste(a, b);
+   imprimirPosicion_este( x,  y);
+   navegarAloeste( a,b);
+   imprimirPosicion_oeste( x,  y); 
+    int *direccion_x = &x;
+    printf("La direccion de X guardada en otra variable es: %p \n", direccion_x);
+    int *direccion_y = &y;
+    printf("la direccion de Y guardada en otra variable es: %p \n", direccion_y);
+    return EXIT_SUCCESS;
+}
